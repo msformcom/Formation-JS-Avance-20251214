@@ -1,0 +1,17 @@
+Accès aux machines virtuelles :
+
+Connectez-vous à l'adresse suivante à partir de votre navigateur
+https://lab.ib-formation.fr
+
+Utilisez votre nom d'utilisateur et mot de passe de connexion :
+
+04.02	Poste10	brice.carbonnieres15	            gH4m7ckT
+04.02	Poste11	sandra.gregoire15	                DQmkzfR2        
+04.02	Poste12	marie.bodinduringer15	            74PRzAhp
+04.02	Poste13	oscar.belna15	                    wHk7xYjQ
+04.02	Poste14	olivier.blanc15	                    tAnjfD7U
+04.02	Poste15	jean-christophe.cane15	            NRPXW4cQ
+04.02	Poste16	benoit.weber15	                    x2dzRgWv
+
+Une fois connecté à la machine, le mot de passe de session est
+Pa55w.rd
