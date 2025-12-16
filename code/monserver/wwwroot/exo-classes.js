@@ -2,8 +2,8 @@
 // Ajouter une fonction au prototype des chaine
 String.prototype.ellipsis=function(maxLength){
     if(this.length<=maxLength){
-        this[2]="7"
-        return this;
+        // this : objet qui pointe vers la valeur String => boxing
+        return this.toString();
     }
     return this.substring(0,maxLength-3)+"...";
 }
