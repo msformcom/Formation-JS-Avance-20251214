@@ -2,7 +2,7 @@
 // En fonction de tsconfig.json => module = commonjs => traduit en require(...)
 import express from "express";
 // Import à partir de variable
-import {messageServerLance} from "./variables";
+import {messageServerLance, portReseau} from "./variables";
 import config from "./variables";
 
 
@@ -30,8 +30,8 @@ app.use(async (req,res,next)=>{
 app.use(express.static("wwwroot"));
 
 // listen => fonction asynchrone
-app.listen(5000,()=>{
-    console.log(messageServerLance);
+app.listen(portReseau,()=>{
+    console.log(messageServerLance + "sur le port "+portReseau);
 });
 
 

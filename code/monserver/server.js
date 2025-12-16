@@ -26,8 +26,8 @@ app.use(async (req, res, next) => {
 // Demande au server de servir les fichiers du dossier wwwroot
 app.use(express_1.default.static("wwwroot"));
 // listen => fonction asynchrone
-app.listen(5000, () => {
-    console.log(variables_1.messageServerLance);
+app.listen(variables_1.portReseau, () => {
+    console.log(variables_1.messageServerLance + "sur le port " + variables_1.portReseau);
 });
 console.log("Après exécution du listen qui n'attends pas que le serveur soit lancé pour rendre la main");
 //# sourceMappingURL=server.js.map
