@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("jasmine");
+
 describe("Addition", function () {
     it("1+1==2", () => {
         // Arrange => Initialise les conditions du test
@@ -12,4 +10,3 @@ describe("Addition", function () {
         expect(c).withContext("1+1 n'est pas égal à deux").toBe(2);
     });
 });
-//# sourceMappingURL=first.spec.js.map

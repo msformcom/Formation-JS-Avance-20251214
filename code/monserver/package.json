@@ -12,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
-    "gulp-replace": "^1.1.4"
+    "gulp-replace": "^1.1.4",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/ws": "^8.18.1",
     "gulp": "^5.0.1",
     "gulp-livereload": "^4.0.2",
     "gulp-sourcemaps": "^3.0.0",

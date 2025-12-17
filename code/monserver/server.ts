@@ -4,7 +4,8 @@ import express from "express";
 // Import à partir de variable
 import {messageServerLance, portReseau} from "./variables";
 import config from "./variables";
-
+import { createServer } from 'http';
+import { WebSocketServer } from 'ws';
 
 // Import des exports du fichier variables.js
 //
@@ -13,7 +14,31 @@ import config from "./variables";
 // Créer l'objet server
 const app=express();
 
-let a:number=6;
+// Création de notre server WebSocket
+const server = createServer(app);
+
+const wss = new WebSocketServer({ server });
+
+wss.on('connection', function connection(ws) {
+    console.log('New client connected');
+
+    ws.on('message', function message(data) {
+        const messageText = data.toString();
+        console.log('Received:', messageText);
+        ws.send(`Echo: ${messageText}`);
+    });
+
+    ws.on('close', function close() {
+        console.log('Client disconnected');
+    });
+});
+
+setInterval(() => {
+    // J'envois le cours aux clients connectés
+        for(let c of wss.clients){
+            c.send(JSON.stringify({coursEuroDollar:Math.random()}));
+        }
+}, 1000);
 
 // Middleware journalisation
 app.use(async (req,res,next)=>{
@@ -38,6 +63,10 @@ app.listen(portReseau,()=>{
     console.log(messageServerLance + "sur le port "+portReseau);
 });
 
+// Lancement sur le port voulu
+server.listen(portReseau+1,()=>{
+    console.log("Server websocket lancé");
+})
 
 
 console.log("Après exécution du listen qui n'attends pas que le serveur soit lancé pour rendre la main");
