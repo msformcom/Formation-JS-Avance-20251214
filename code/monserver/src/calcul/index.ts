@@ -1,5 +1,5 @@
-import { calculLongEvent } from "../services/calculLongEvent.js";
-import { additionAsync } from "../services/calculLongPromise.js";
+import { calculLongEvent } from "../services/calculLongEvent";
+import { additionAsync } from "../services/calculLongPromise";
 
 document.addEventListener("DOMContentLoaded", () => {
     let button = document.querySelector("#btn_calcul")! as HTMLButtonElement;

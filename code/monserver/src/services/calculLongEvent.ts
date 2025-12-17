@@ -1,4 +1,4 @@
-import { AdditionOperation } from "./additionOperation.js";
+import { AdditionOperation } from "./additionOperation";
 
 export function calculLongEvent(a: number, b: number) {
     let resultat = new AdditionOperation();

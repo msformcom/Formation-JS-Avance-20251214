@@ -1,4 +1,4 @@
-import { getPositionAsync } from "../services/getPosition.js";
+import { getPositionAsync } from "../services/getPosition";
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {

@@ -1,4 +1,4 @@
-import { CoursWatcher } from "../services/CoursWatcher.js";
+import { CoursWatcher } from "../services/CoursWatcher";
 
 document.addEventListener("DOMContentLoaded",()=>{
     let surveillance=new CoursWatcher(3000); 
