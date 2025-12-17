@@ -1,5 +1,7 @@
+import { CoursWatcher } from "../services/CoursWatcher.js";
+
 document.addEventListener("DOMContentLoaded",()=>{
-    let surveillance=surveillerCours(3000); 
+    let surveillance=new CoursWatcher(3000); 
     // 3000 => intervale souhaité pour le rafraichissement
     // toutes les 3 s => fetch("./coursEuroDollar")
     // => resultat => declenchement d'event newcours
@@ -7,10 +9,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     // let dto=await r.json();
 
     
-    surveillance.addEventListener("newcours",(e)=>{
-        document.getElementById("div_cours")?.innerHTML=e.detail.cours;
+    surveillance.addEventListener("change",(e)=>{
+        document.getElementById("div_cours")!.innerHTML=(e as CustomEvent).detail.coursEuroDollar;
     })
     surveillance.addEventListener("error",(e)=>{
-        document.getElementById("div_cours")?.innerHTML="Erreur de chargement du cours";
+        document.getElementById("div_cours")!.innerHTML=(e as CustomEvent).detail.message;
     })
 })
