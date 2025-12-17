@@ -19,16 +19,25 @@ const server = createServer(app);
 
 const wss = new WebSocketServer({ server });
 
+
+let clientConnectes:{ws:any, nom?:string}[]=[];
 wss.on('connection', function connection(ws) {
     console.log('New client connected');
-
+    clientConnectes.push({ws:ws})
     ws.on('message', function message(data) {
         const messageText = data.toString();
+        const obj=JSON.parse(messageText);
+        if(obj.nom){
+            console.log("Client connecté :"+obj.nom);
+            clientConnectes.find(c=>c.ws==ws)!.nom=obj.nom
+        }
+
         console.log('Received:', messageText);
         ws.send(`Echo: ${messageText}`);
     });
 
     ws.on('close', function close() {
+        clientConnectes=clientConnectes.filter(c=>c.ws!=ws);
         console.log('Client disconnected');
     });
 });

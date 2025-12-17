@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     let socket=new WebSocket("ws://localhost:4201");
     socket.addEventListener("open",()=>{
         // Envoi d'un message au server
-        socket.send(JSON.stringify({message:"Bonjour"}));
+        socket.send(JSON.stringify({nom:"Dom"}));
 
         socket.addEventListener("message",(e)=>{
             // e.data contient le message du server
