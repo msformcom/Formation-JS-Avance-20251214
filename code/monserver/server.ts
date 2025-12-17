@@ -26,6 +26,10 @@ app.use(async (req,res,next)=>{
     console.log(`Traitée : ${req.path} en ${ms} ms` );
 })
 
+app.get("/coursEuroDollar",(req,res)=>{
+    res.send({coursEuroDollar:Math.random()})
+})
+
 // Demande au server de servir les fichiers du dossier wwwroot
 app.use(express.static("wwwroot"));
 
